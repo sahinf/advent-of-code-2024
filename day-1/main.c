@@ -69,11 +69,11 @@ void part2(size_t size, int *list1, int *list2){
 		while (j < size && list2[j] < list1[i])
 			j++;
 
-		// cout similarity
+		// count similarity of LHS[i]
 		for (; j < size && list2[j] == list1[i]; j++) 
 			similarity_i++;
 
-		similarity_total += similarity_i;
+		similarity_total += similarity_i * list1[i];
 	}
 	printf("%-*s = %lu\n", padding, "Similarity score O(nlogn)", similarity_total);
 
